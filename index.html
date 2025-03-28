@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SecureScape - Portable AI-Powered Security System">
+    <title>SecureScape - Portable AI-Powered Security System</title>
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Imports -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:700|Open+Sans&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.x CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <div class="nav-left">
+                <img src="images/firstlogo.png" alt="SecureScape Logo" class="logo">
+                <span class="brand-name">SecureScape</span>
+            </div>
+            <ul class="nav-right">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#documents">Documents</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#demo">SD1 Demo</a></li>
+                <li><a href="#midterm-demo">Midterm</a></li>
+                <li><a href="#cdr-presentation">CDR</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1 class="hero-text">
+            <span class="welcome">Welcome to</span>
+            <span class="brand">
+                <span>S</span><span>e</span><span>c</span><span>u</span><span>r</span><span>e</span><span>S</span><span>c</span><span>a</span><span>p</span><span>e</span>
+            </span>
+        </h1>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Project Overview Section -->
+        <section id="home">
+            <h2>Project Overview</h2>
+            <p>
+                <strong>SecureScape</strong> is a portable, AI-powered security system designed for remote locations without internet access. Utilizing ESP32-CAM microcontrollers equipped with infrared sensors, our system detects motion in real-time, processes images locally, and communicates alerts through a central control unit. Whether you're camping or monitoring a remote site, SecureScape offers reliable security when you need it most.
+            </p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features">
+            <h2>Key Features</h2>
+            <ul class="features-list">
+                <li><i class="fas fa-brain"></i> <strong> AI Threat Detection </strong> Real-time object recognition using TensorFlow Lite.</li>
+                <li><i class="fas fa-wifi"></i> <strong> Offline Operation </strong> Functions without internet, perfect for remote areas.</li>
+                <li><i class="fas fa-battery-half"></i> <strong> Energy Efficient </strong> Low-power design with long battery life.</li>
+                <li><i class="fas fa-mobile-alt"></i> <strong> User Alerts </strong> Receive notifications via our mobile app or central gadget.</li>
+                <li><i class="fas fa-hiking"></i> <strong> Durable & Portable </strong> Designed to withstand outdoor conditions and easy to deploy.</li>
+            </ul>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <div class="how-it-works-content">
+                <div class="how-it-works-text">
+                    <div class="system-component">
+                        <i class="fas fa-camera-retro"></i>
+                        <h3>Sensor Nodes</h3>
+                        <p>Deployed around the perimeter, these nodes detect motion using IR sensors and capture images with ESP32-CAM modules.</p>
+                    </div>
+                    <div class="system-component">
+                        <i class="fas fa-brain"></i>
+                        <h3>Central Gadget</h3>
+                        <p>Collects data from nodes, processes images to identify threats, and manages alerts and system settings.</p>
+                    </div>
+                    <div class="system-component">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Communication</h3>
+                        <p>Nodes communicate wirelessly with the central gadget, creating a mesh network for reliable coverage.</p>
+                    </div>
+                    <div class="system-component">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Processing</h3>
+                        <p>AI-powered image processing runs locally on the central gadget, ensuring privacy and offline operation.</p>
+                    </div>
+                </div>
+                <div class="how-it-works-image">
+                    <img src="images/nodeDiagram1.png" alt="SecureScape System Diagram 1" class="system-diagram">
+                    <img src="images/nodeDiagram2.png" alt="SecureScape System Diagram 2" class="system-diagram">
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section id="use-cases">
+            <h2>Use Cases</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <i class="fas fa-campground"></i>
+                    <h3>Campsite Security</h3>
+                    <p>Protect your campsite from intruders and wildlife disturbances.</p>
+                </div>
+                <div class="use-case-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Remote Property Monitoring</h3>
+                    <p>Keep an eye on cabins, construction sites, or other remote assets.</p>
+                </div>
+                <div class="use-case-card">
+                    <i class="fas fa-binoculars"></i>
+                    <h3>Wildlife Observation</h3>
+                    <p>Non-invasively monitor wildlife activity for research or photography.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Documents Section -->
+        <section id="documents">
+            <h2>Project Documents</h2>
+            <div class="document-grid">
+                <a href="documents/dncOriginal.pdf" target="_blank" class="document-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Original Divide & Conquer</h3>
+                    <p>Initial project plan outlining task distribution among team members.</p>
+                </a>
+                <a href="documents/dncRevised.pdf" target="_blank" class="document-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Revised Divide & Conquer</h3>
+                    <p>Updated project plan with refined roles and responsibilities.</p>
+                </a>
+                <a href="documents/60pgRough.pdf" target="_blank" class="document-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Original 60-Page Document</h3>
+                    <p>Comprehensive report detailing the project's initial design and objectives.</p>
+                </a>
+                <a href="documents/60pgRevised.pdf" target="_blank" class="document-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Revised 60-Page Document</h3>
+                    <p>Updated comprehensive report with refined design specifications and implementation details.</p>
+                </a>
+                <a href="documents/sd1FinalPaper.pdf" target="_blank" class="document-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Senior Design 1 Final Paper</h3>
+                    <p>Final documentation and results from Senior Design 1 semester.</p>
+                </a>
+                <a href="documents/8pgPaper.pdf" target="_blank" class="document-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Senior Design 2 8-Page Paper</h3>
+                    <p>Concise overview of project implementation and final results from Senior Design 2.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Team Members Section -->
+        <section id="team">
+            <h2>Meet the Team</h2>
+            <div class="team-grid">
+                <div class="member-card">
+                    <div class="member-image" style="background-image: url('images/jaxonsPic.png');"></div>
+                    <h3>Jaxon Topel</h3>
+                    <p><strong>Computer Engineer</strong></p>
+                </div>
+                <div class="member-card">
+                    <div class="member-image" style="background-image: url('images/phillipsPic.png');"></div>
+                    <h3>Phillip Murano</h3>
+                    <p><strong>Electrical Engineer</strong></p>
+                </div>
+                <div class="member-card">
+                    <div class="member-image" style="background-image: url('images/dylansPic.png');"></div>
+                    <h3>Dylan Myers</h3>
+                    <p><strong>Electrical Engineer</strong></p>
+                </div>
+                <div class="member-card">
+                    <div class="member-image" style="background-image: url('images/kirbsPic.png');"></div>
+                    <h3>Colin Kirby</h3>
+                    <p><strong>Computer Engineer</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo">
+            <h2>Senior Design 1 Project Demo</h2>
+            <div class="video-container">
+                <video id="demo-video" controls poster="images/firstlogo.png">
+                    <source src="videos/demoVidSD1.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="demo-description">
+                <h3>Senior Design 1 Project Walkthrough</h3>
+                <ul class="demo-highlights">
+                    <li><i class="fas fa-users"></i> Meet our team members</li>
+                    <li><i class="fas fa-camera"></i> See our ESP32-CAM in action</li>
+                    <li><i class="fas fa-network-wired"></i> Watch data transmission through our router</li>
+                    <li><i class="fas fa-code"></i> Current software and hardware progress</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Midterm Demo Section -->
+        <section id="midterm-demo">
+            <h2>Senior Design 2 Midterm Demo</h2>
+            <div class="video-container">
+                <iframe 
+                    id="midterm-video"
+                    src="https://www.youtube.com/embed/WToqwQgZfzg"
+                    title="SecureScape Midterm Demo"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="demo-description">
+                <h3>Senior Design 2 Midterm Progress</h3>
+                <ul class="demo-highlights">
+                    <li><i class="fas fa-mobile-alt"></i> Mobile application demonstration</li>
+                    <li><i class="fas fa-microchip"></i> Hardware implementation progress</li>
+                    <li><i class="fas fa-brain"></i> AI detection capabilities</li>
+                    <li><i class="fas fa-tasks"></i> System integration overview</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CDR Presentation Section -->
+        <section id="cdr-presentation">
+            <h2>Critical Design Review Presentation</h2>
+            <div class="video-container">
+                <iframe 
+                    id="cdr-video"
+                    src="https://www.youtube.com/embed/j9Po0kmSDtE"
+                    title="SecureScape CDR Presentation"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="demo-description">
+                <h3>Senior Design 2 CDR Overview</h3>
+                <ul class="demo-highlights">
+                    <li><i class="fas fa-project-diagram"></i> Complete system architecture</li>
+                    <li><i class="fas fa-microchip"></i> Hardware implementation details</li>
+                    <li><i class="fas fa-mobile-alt"></i> Mobile application interface</li>
+                    <li><i class="fas fa-chart-line"></i> Testing results and validation</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Interested in learning more about SecureScape? Reach out to us!</p>
+            <a href="mailto:co201115@ucf.edu" class="contact-button">Contact Us</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Senior Design Group 15 - University of Central Florida</p>
+            <ul class="social-media">
+                <!-- Add social media links if applicable -->
+                <li><a href="https://github.com/TopelJL/Deployable-Security-Sytem" target="_blank"><i class="fab fa-github"></i></a></li>
+                <!-- Add more icons as needed -->
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero Text Animation
+            const heroText = document.querySelector('.hero-text');
+            const brandLetters = heroText.querySelectorAll('.brand span');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateText();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(heroText);
+
+            function animateText() {
+                brandLetters.forEach((letter, index) => {
+                    letter.style.opacity = '0';
+                    letter.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        letter.style.transition = `opacity 0.5s ease-in-out ${index * 0.1}s, transform 0.5s ease-in-out ${index * 0.1}s`;
+                        letter.style.opacity = '1';
+                        letter.style.transform = 'translateY(0)';
+                    }, 50);
+                });
+            }
+
+            // Navigation Active Link Switching
+            const navLinks = document.querySelectorAll('.nav-right a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    document.querySelector('.nav-right a.active').classList.remove('active');
+                    link.classList.add('active');
+                });
+            });
+
+            // Modal functionality
+            const modal = document.getElementById('videoModal');
+            const closeBtn = document.querySelector('.close-modal');
+            const videoFrame = document.getElementById('youtubeVideo');
+            const videoUrl = 'https://www.youtube.com/embed/VIDEO_ID'; // Replace VIDEO_ID with your actual YouTube video ID
+
+            window.openVideoModal = function() {
+                modal.style.display = 'flex';
+                videoFrame.src = videoUrl;
+            }
+
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+                videoFrame.src = ''; // Stop video playback
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    videoFrame.src = ''; // Stop video playback
+                }
+            }
+        });
+    </script>
+</body>
+</html>

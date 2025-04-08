@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SecureScape - Portable AI-Powered Security System">
-    <title>SecureScape - Portable AI-Powered Security System</title>
+    <meta name="description" content="SecureScape - A portable security system with embedded image recognition, motion alerts, and offline operation.">
+    <meta name="keywords" content="portable security system, embedded image recognition, ESP32-CAM, remote surveillance, SecureScape, offline security">
+    <meta name="author" content="Senior Design Group 15, UCF">
+    <title>SecureScape - Portable Smart Security System</title>
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="styles.css">
     <!-- Font Imports -->
     <link href="https://fonts.googleapis.com/css?family=Lato:700|Open+Sans&display=swap" rel="stylesheet">
     <!-- Font Awesome 6.x CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Header and Navigation -->
@@ -20,14 +24,17 @@
                 <img src="images/firstlogo.png" alt="SecureScape Logo" class="logo">
                 <span class="brand-name">SecureScape</span>
             </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
             <ul class="nav-right">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#documents">Documents</a></li>
                 <li><a href="#team">Team</a></li>
-                <li><a href="#demo">SD1 Demo</a></li>
-                <li><a href="#midterm-demo">Midterm</a></li>
-                <li><a href="#cdr-presentation">CDR</a></li>
+                <li><a href="#demo">Senior Design Demo</a></li>
+                <li><a href="#cdr-presentation">Critical Design Review</a></li>
+                <li><a href="#midterm-demo">Midterm Progress</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -35,12 +42,21 @@
 
     <!-- Hero Section -->
     <div class="hero">
-        <h1 class="hero-text">
-            <span class="welcome">Welcome to</span>
-            <span class="brand">
-                <span>S</span><span>e</span><span>c</span><span>u</span><span>r</span><span>e</span><span>S</span><span>c</span><span>a</span><span>p</span><span>e</span>
-            </span>
-        </h1>
+        <div class="hero-content">
+            <h1 class="hero-text">
+                <span class="welcome">Welcome to</span>
+                <span class="brand">
+                    <span>S</span><span>e</span><span>c</span><span>u</span><span>r</span><span>e</span><span>S</span><span>c</span><span>a</span><span>p</span><span>e</span>
+                </span>
+            </h1>
+            <p class="hero-subtitle">Portable Smart Security for Remote Locations</p>
+            <div class="hero-cta">
+                <a href="#features" class="cta-button">
+                    <span>Explore Features</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Main Content -->
@@ -48,20 +64,25 @@
         <!-- Project Overview Section -->
         <section id="home">
             <h2>Project Overview</h2>
-            <p>
-                <strong>SecureScape</strong> is a portable, AI-powered security system designed for remote locations without internet access. Utilizing ESP32-CAM microcontrollers equipped with infrared sensors, our system detects motion in real-time, processes images locally, and communicates alerts through a central control unit. Whether you're camping or monitoring a remote site, SecureScape offers reliable security when you need it most.
+            <p style="text-align: justify;">
+                <strong>SecureScape</strong> is a portable, smart security system designed for remote locations without internet access. Utilizing ESP32-CAM microcontrollers equipped with infrared sensors, our system detects motion in real-time, processes images locally using a custom-built, lightweight image analysis algorithm for person detection, and communicates alerts through a central control unit. The system is scalable up to three nodes, making it perfect for perimeter security. Whether you're camping or monitoring a remote site, SecureScape offers reliable security when you need it most.
             </p>
+            <div class="system-flow">
+                <img src="images/processDiagram.png" alt="SecureScape System Flow" class="flow-diagram">
+                <p class="diagram-caption">System communication flow between nodes, central gadget, and mobile app</p>
+            </div>
         </section>
 
         <!-- Features Section -->
         <section id="features">
             <h2>Key Features</h2>
             <ul class="features-list">
-                <li><i class="fas fa-brain"></i> <strong> AI Threat Detection </strong> Real-time object recognition using TensorFlow Lite.</li>
-                <li><i class="fas fa-wifi"></i> <strong> Offline Operation </strong> Functions without internet, perfect for remote areas.</li>
-                <li><i class="fas fa-battery-half"></i> <strong> Energy Efficient </strong> Low-power design with long battery life.</li>
-                <li><i class="fas fa-mobile-alt"></i> <strong> User Alerts </strong> Receive notifications via our mobile app or central gadget.</li>
-                <li><i class="fas fa-hiking"></i> <strong> Durable & Portable </strong> Designed to withstand outdoor conditions and easy to deploy.</li>
+                <li><i class="fas fa-camera"></i> <strong>Smart Threat Detection</strong> Local person detection algorithm runs on-device for real-time alerts without cloud processing.</li>
+                <li><i class="fas fa-wifi"></i> <strong>Offline Operation</strong> Functions without internet, perfect for remote areas.</li>
+                <li><i class="fas fa-battery-half"></i> <strong>Energy Efficient</strong> Low-power design with long battery life.</li>
+                <li><i class="fas fa-mobile-alt"></i> <strong>User Alerts</strong> Receive notifications via our mobile app or central gadget.</li>
+                <li><i class="fas fa-hiking"></i> <strong>Durable & Portable</strong> Designed to withstand outdoor conditions and easy to deploy.</li>
+                <li><i class="fas fa-shield-alt"></i> <strong>Privacy Focused</strong> All processing happens on-device, no cloud services required.</li>
             </ul>
         </section>
 
@@ -76,9 +97,9 @@
                         <p>Deployed around the perimeter, these nodes detect motion using IR sensors and capture images with ESP32-CAM modules.</p>
                     </div>
                     <div class="system-component">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-microchip"></i>
                         <h3>Central Gadget</h3>
-                        <p>Collects data from nodes, processes images to identify threats, and manages alerts and system settings.</p>
+                        <p>The ESP32-S3 central gadget collects data from nodes, processes images to identify potential threats, and manages system settings.</p>
                     </div>
                     <div class="system-component">
                         <i class="fas fa-network-wired"></i>
@@ -86,9 +107,9 @@
                         <p>Nodes communicate wirelessly with the central gadget, creating a mesh network for reliable coverage.</p>
                     </div>
                     <div class="system-component">
-                        <i class="fas fa-microchip"></i>
-                        <h3>Processing</h3>
-                        <p>AI-powered image processing runs locally on the central gadget, ensuring privacy and offline operation.</p>
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Integration</h3>
+                        <p>Our Flutter-based mobile app provides real-time alerts, system control, and image review capabilities.</p>
                     </div>
                 </div>
                 <div class="how-it-works-image">
@@ -117,43 +138,141 @@
                     <h3>Wildlife Observation</h3>
                     <p>Non-invasively monitor wildlife activity for research or photography.</p>
                 </div>
+                <div class="use-case-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>Mobile Security</h3>
+                    <p>Secure temporary locations while traveling or during outdoor events.</p>
+                </div>
             </div>
         </section>
 
         <!-- Project Documents Section -->
         <section id="documents">
-            <h2>Project Documents</h2>
-            <div class="document-grid">
-                <a href="documents/dncOriginal.pdf" target="_blank" class="document-card">
-                    <i class="fas fa-file-pdf"></i>
-                    <h3>Original Divide & Conquer</h3>
-                    <p>Initial project plan outlining task distribution among team members.</p>
-                </a>
-                <a href="documents/dncRevised.pdf" target="_blank" class="document-card">
-                    <i class="fas fa-file-pdf"></i>
-                    <h3>Revised Divide & Conquer</h3>
-                    <p>Updated project plan with refined roles and responsibilities.</p>
-                </a>
-                <a href="documents/60pgRough.pdf" target="_blank" class="document-card">
-                    <i class="fas fa-file-pdf"></i>
-                    <h3>Original 60-Page Document</h3>
-                    <p>Comprehensive report detailing the project's initial design and objectives.</p>
-                </a>
-                <a href="documents/60pgRevised.pdf" target="_blank" class="document-card">
-                    <i class="fas fa-file-pdf"></i>
-                    <h3>Revised 60-Page Document</h3>
-                    <p>Updated comprehensive report with refined design specifications and implementation details.</p>
-                </a>
-                <a href="documents/sd1FinalPaper.pdf" target="_blank" class="document-card">
-                    <i class="fas fa-file-pdf"></i>
-                    <h3>Senior Design 1 Final Paper</h3>
-                    <p>Final documentation and results from Senior Design 1 semester.</p>
-                </a>
-                <a href="documents/8pgPaper.pdf" target="_blank" class="document-card">
-                    <i class="fas fa-file-pdf"></i>
-                    <h3>Senior Design 2 8-Page Paper</h3>
-                    <p>Concise overview of project implementation and final results from Senior Design 2.</p>
-                </a>
+            <h2>Project Documentation</h2>
+            
+            <!-- Core Documentation -->
+            <div class="doc-category">
+                <h3>Core Documentation</h3>
+                <div class="document-grid">
+                    <a href="documents/dncPaper.pdf" target="_blank" class="document-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Divide & Conquer Document</h4>
+                        <p>Initial project planning and task distribution documentation.</p>
+                        <span class="status-badge complete">Complete</span>
+                    </a>
+                    <a href="documents/60pgPaper.pdf" target="_blank" class="document-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Senior Design 1 Paper</h4>
+                        <p>Comprehensive 60-page report detailing initial project design and specifications.</p>
+                        <span class="status-badge complete">Complete</span>
+                    </a>
+                    <a href="documents/120pgPaper.pdf" target="_blank" class="document-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Senior Design 1 Final Report</h4>
+                        <p>Complete documentation of first semester progress and achievements.</p>
+                        <span class="status-badge complete">Complete</span>
+                    </a>
+                    <div class="document-card coming-soon">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Senior Design 2 Final Report</h4>
+                        <p>Comprehensive documentation of the complete project implementation and results.</p>
+                        <span class="status-badge pending">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Presentations & Demos -->
+            <div class="doc-category">
+                <h3>Presentations & Demonstrations</h3>
+                <div class="document-grid">
+                    <!-- CDR Materials -->
+                    <div class="presentation-group">
+                        <h4 class="group-title">Critical Design Review (CDR)</h4>
+                        <div class="presentation-items">
+                            <a href="https://www.youtube.com/embed/j9Po0kmSDtE" target="_blank" class="document-card video-card">
+                                <i class="fas fa-video"></i>
+                                <h4>CDR Presentation Video</h4>
+                                <p>Watch our Critical Design Review presentation.</p>
+                                <span class="status-badge complete">Complete</span>
+                            </a>
+                            <a href="documents/cdrPres.pdf" target="_blank" class="document-card">
+                                <i class="fas fa-file-powerpoint"></i>
+                                <h4>CDR Presentation Slides</h4>
+                                <p>Slides from our Critical Design Review presentation.</p>
+                                <span class="status-badge complete">Complete</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Midterm Materials -->
+                    <div class="presentation-group">
+                        <h4 class="group-title">Senior Design 2 Midterm</h4>
+                        <div class="presentation-items">
+                            <a href="https://www.youtube.com/embed/WToqwQgZfzg" target="_blank" class="document-card video-card">
+                                <i class="fas fa-video"></i>
+                                <h4>Midterm Demo Video</h4>
+                                <p>Watch our Senior Design 2 midterm progress demonstration.</p>
+                                <span class="status-badge complete">Complete</span>
+                            </a>
+                            <a href="documents/midtermDemoPres.pdf" target="_blank" class="document-card">
+                                <i class="fas fa-file-powerpoint"></i>
+                                <h4>Midterm Presentation Slides</h4>
+                                <p>Slides from our Senior Design 2 midterm presentation.</p>
+                                <span class="status-badge complete">Complete</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Final Materials -->
+                    <div class="presentation-group">
+                        <h4 class="group-title">Final Presentation</h4>
+                        <div class="presentation-items">
+                            <div class="document-card coming-soon">
+                                <i class="fas fa-video"></i>
+                                <h4>Final Presentation Video</h4>
+                                <p>Watch our final project presentation.</p>
+                                <span class="status-badge pending">Coming Soon</span>
+                            </div>
+                            <div class="document-card coming-soon">
+                                <i class="fas fa-file-powerpoint"></i>
+                                <h4>Final Presentation Slides</h4>
+                                <p>Slides from our final project presentation.</p>
+                                <span class="status-badge pending">Coming Soon</span>
+                            </div>
+                            <div class="document-card coming-soon">
+                                <i class="fas fa-video"></i>
+                                <h4>Final Demonstration Video</h4>
+                                <p>Watch our complete system demonstration.</p>
+                                <span class="status-badge pending">Coming Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents Section -->
+            <div class="doc-category">
+                <h3>GitHub Repositories</h3>
+                <div class="document-grid">
+                    <a href="https://github.com/TopelJL/Deployable-Security-Sytem" target="_blank" class="document-card">
+                        <i class="fab fa-github"></i>
+                        <h4>Embedded System & Image Processing</h4>
+                        <p>Core system implementation including ESP32-CAM setup, node communication, and image processing algorithms.</p>
+                        <span class="status-badge complete">Main Repository</span>
+                    </a>
+                    <a href="https://github.com/KirbysGit/dssApp" target="_blank" class="document-card">
+                        <i class="fab fa-github"></i>
+                        <h4>Mobile Application</h4>
+                        <p>Flutter-based mobile app for system control, notifications, and image review.</p>
+                        <span class="status-badge complete">App Repository</span>
+                    </a>
+                    <a href="https://github.com/KirbysGit/dssWebsite" target="_blank" class="document-card">
+                        <i class="fab fa-github"></i>
+                        <h4>Project Website</h4>
+                        <p>Source code for this documentation website.</p>
+                        <span class="status-badge complete">Website Repository</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -161,25 +280,105 @@
         <section id="team">
             <h2>Meet the Team</h2>
             <div class="team-grid">
-                <div class="member-card">
-                    <div class="member-image" style="background-image: url('images/jaxonsPic.png');"></div>
+                <div class="member-card" data-expanded="false">
+                    <div class="member-image-wrapper">
+                        <div class="member-image" style="background-image: url('images/jaxonsPic.png');" loading="lazy"></div>
+                    </div>
                     <h3>Jaxon Topel</h3>
-                    <p><strong>Computer Engineer</strong></p>
+                    <p class="role">Computer Engineer</p>
+                    <p class="bio">Specializing in embedded systems and computer vision, Jaxon leads the development of our node-to-gadget communication and image processing algorithms.</p>
+                    <button class="expand-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                        <span class="toggle-text">Read more</span>
+                    </button>
+                    <div class="member-details">
+                        <h4>Responsibilities:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Node → Gadget Communication</li>
+                            <li><i class="fas fa-check-circle"></i> Image Processing Algorithm Development & Testing</li>
+                            <li><i class="fas fa-check-circle"></i> System Architecture Design</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/jaxon-topel/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="member-card">
-                    <div class="member-image" style="background-image: url('images/phillipsPic.png');"></div>
+                <div class="member-card" data-expanded="false">
+                    <div class="member-image-wrapper">
+                        <div class="member-image" style="background-image: url('images/phillipsPic.png');" loading="lazy"></div>
+                    </div>
                     <h3>Phillip Murano</h3>
-                    <p><strong>Electrical Engineer</strong></p>
+                    <p class="role">Electrical Engineer</p>
+                    <p class="bio">Expert in power systems and CAD design, Phillip ensures our hardware is efficient and professionally engineered.</p>
+                    <button class="expand-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                        <span class="toggle-text">Read more</span>
+                    </button>
+                    <div class="member-details">
+                        <h4>Responsibilities:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> CAD Development</li>
+                            <li><i class="fas fa-check-circle"></i> Node: Alarm system / LEDs</li>
+                            <li><i class="fas fa-check-circle"></i> Power Management</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/phillip-murano/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="member-card">
-                    <div class="member-image" style="background-image: url('images/dylansPic.png');"></div>
+                <div class="member-card" data-expanded="false">
+                    <div class="member-image-wrapper">
+                        <div class="member-image" style="background-image: url('images/dylansPic.png');" loading="lazy"></div>
+                    </div>
                     <h3>Dylan Myers</h3>
-                    <p><strong>Electrical Engineer</strong></p>
+                    <p class="role">Electrical Engineer</p>
+                    <p class="bio">Hardware integration specialist focusing on PCB design and sensor implementation for optimal system performance.</p>
+                    <button class="expand-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                        <span class="toggle-text">Read more</span>
+                    </button>
+                    <div class="member-details">
+                        <h4>Responsibilities:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> PCB Design</li>
+                            <li><i class="fas fa-check-circle"></i> Gadget Peripherals</li>
+                            <li><i class="fas fa-check-circle"></i> Node: Camera / IR Sensors</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/dylan-myers/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="member-card">
-                    <div class="member-image" style="background-image: url('images/kirbsPic.png');"></div>
+                <div class="member-card" data-expanded="false">
+                    <div class="member-image-wrapper">
+                        <div class="member-image" style="background-image: url('images/kirbsPic.png');" loading="lazy"></div>
+                    </div>
                     <h3>Colin Kirby</h3>
-                    <p><strong>Computer Engineer</strong></p>
+                    <p class="role">Computer Engineer</p>
+                    <p class="bio">Mobile & Frontend Developer responsible for the Flutter-based mobile application and project website, ensuring seamless user interaction with the SecureScape system.</p>
+                    <button class="expand-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                        <span class="toggle-text">Read more</span>
+                    </button>
+                    <div class="member-details">
+                        <h4>Responsibilities:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Mobile App Development</li>
+                            <li><i class="fas fa-check-circle"></i> Gadget → App Communication</li>
+                            <li><i class="fas fa-check-circle"></i> Website Development</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/colinwkirby/" target="_blank" class="linkedin-link">
+                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -188,18 +387,48 @@
         <section id="demo">
             <h2>Senior Design 1 Project Demo</h2>
             <div class="video-container">
-                <video id="demo-video" controls poster="images/firstlogo.png">
-                    <source src="videos/demoVidSD1.MOV" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <iframe 
+                    id="demo-video"
+                    src="https://www.youtube.com/embed/-2jcz-RWzyo"
+                    title="SecureScape SD1 Demo"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
             </div>
             <div class="demo-description">
                 <h3>Senior Design 1 Project Walkthrough</h3>
                 <ul class="demo-highlights">
-                    <li><i class="fas fa-users"></i> Meet our team members</li>
-                    <li><i class="fas fa-camera"></i> See our ESP32-CAM in action</li>
-                    <li><i class="fas fa-network-wired"></i> Watch data transmission through our router</li>
-                    <li><i class="fas fa-code"></i> Current software and hardware progress</li>
+                    <li><i class="fas fa-microchip"></i> ESP32-CAM Node Breakdown</li>
+                    <li><i class="fas fa-camera"></i> Image Receival & Processing</li>
+                    <li><i class="fas fa-code"></i> Software Architecture Overview</li>
+                    <li><i class="fas fa-cogs"></i> Hardware Integration Progress</li>
+                    <li><i class="fas fa-brain"></i> Next Steps & Future Work</li>
+                </ul>
+                <p class="demo-note">This demonstration showcases our initial prototype implementation, including the ESP32-CAM setup, communication protocols, and early mobile app development.</p>
+            </div>
+        </section>
+
+        <!-- CDR Presentation Section -->
+        <section id="cdr-presentation">
+            <h2>Critical Design Review Presentation</h2>
+            <div class="video-container">
+                <iframe 
+                    id="cdr-video"
+                    src="https://www.youtube.com/embed/j9Po0kmSDtE"
+                    title="SecureScape CDR Presentation"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="demo-description">
+                <h3>Senior Design 2 CDR Overview</h3>
+                <ul class="demo-highlights">
+                    <li><i class="fas fa-project-diagram"></i> Complete system architecture</li>
+                    <li><i class="fas fa-microchip"></i> Hardware implementation details</li>
+                    <li><i class="fas fa-mobile-alt"></i> Mobile application interface</li>
+                    <li><i class="fas fa-chart-line"></i> Testing results and validation</li>
                 </ul>
             </div>
         </section>
@@ -228,30 +457,6 @@
             </div>
         </section>
 
-        <!-- CDR Presentation Section -->
-        <section id="cdr-presentation">
-            <h2>Critical Design Review Presentation</h2>
-            <div class="video-container">
-                <iframe 
-                    id="cdr-video"
-                    src="https://www.youtube.com/embed/j9Po0kmSDtE"
-                    title="SecureScape CDR Presentation"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="demo-description">
-                <h3>Senior Design 2 CDR Overview</h3>
-                <ul class="demo-highlights">
-                    <li><i class="fas fa-project-diagram"></i> Complete system architecture</li>
-                    <li><i class="fas fa-microchip"></i> Hardware implementation details</li>
-                    <li><i class="fas fa-mobile-alt"></i> Mobile application interface</li>
-                    <li><i class="fas fa-chart-line"></i> Testing results and validation</li>
-                </ul>
-            </div>
-        </section>
-
         <!-- Contact Section -->
         <section id="contact">
             <h2>Get in Touch</h2>
@@ -265,9 +470,24 @@
         <div class="footer-content">
             <p>&copy; 2024 Senior Design Group 15 - University of Central Florida</p>
             <ul class="social-media">
-                <!-- Add social media links if applicable -->
-                <li><a href="https://github.com/TopelJL/Deployable-Security-Sytem" target="_blank"><i class="fab fa-github"></i></a></li>
-                <!-- Add more icons as needed -->
+                <li>
+                    <a href="https://github.com/TopelJL/Deployable-Security-Sytem" target="_blank" title="Core System Repository">
+                        <i class="fab fa-github"></i>
+                        <span class="repo-label">Core</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/KirbysGit/dssApp" target="_blank" title="Mobile App Repository">
+                        <i class="fab fa-github"></i>
+                        <span class="repo-label">App</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/KirbysGit/dssWebsite" target="_blank" title="Website Repository">
+                        <i class="fab fa-github"></i>
+                        <span class="repo-label">Web</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </footer>
@@ -275,6 +495,51 @@
     <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Smooth Scroll Function
+            const smoothScroll = (target, duration = 1000) => {
+                const targetElement = document.querySelector(target);
+                if (!targetElement) return;
+                
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                let startTime = null;
+
+                const animation = currentTime => {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    
+                    // Easing function for smooth acceleration and deceleration
+                    const easeInOutCubic = t => t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+                    
+                    window.scrollTo(0, startPosition + (distance * easeInOutCubic(progress)));
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                };
+
+                requestAnimationFrame(animation);
+            };
+
+            // Add smooth scroll to all navigation links
+            document.querySelectorAll('.nav-right a, .cta-button').forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    const target = link.getAttribute('href');
+                    smoothScroll(target);
+                    
+                    // Close mobile menu if open
+                    const navMenu = document.querySelector('.nav-right');
+                    const hamburger = document.getElementById('hamburger');
+                    if (navMenu.classList.contains('show')) {
+                        navMenu.classList.remove('show');
+                        hamburger.classList.remove('active');
+                    }
+                });
+            });
+
             // Hero Text Animation
             const heroText = document.querySelector('.hero-text');
             const brandLetters = heroText.querySelectorAll('.brand span');
@@ -302,12 +567,90 @@
                 });
             }
 
-            // Navigation Active Link Switching
+            // Hamburger Menu Toggle
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.querySelector('.nav-right');
+
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+                hamburger.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav-right') && !e.target.closest('.hamburger') && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                    hamburger.classList.remove('active');
+                }
+            });
+
+            // Close menu when clicking a link
             const navLinks = document.querySelectorAll('.nav-right a');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    document.querySelector('.nav-right a.active').classList.remove('active');
-                    link.classList.add('active');
+                    navMenu.classList.remove('show');
+                    hamburger.classList.remove('active');
+                });
+            });
+
+            // Update active link on scroll
+            const sections = document.querySelectorAll('section');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Apply staggered animation delays to team cards
+            const cards = document.querySelectorAll('.member-card');
+            cards.forEach((card, index) => {
+                card.style.setProperty('--delay', `${index * 0.2}s`);
+            });
+
+            // Team Member Card Expansion
+            cards.forEach(card => {
+                const toggle = card.querySelector('.expand-toggle');
+                const toggleText = toggle.querySelector('.toggle-text');
+                
+                toggle.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent card click from triggering
+                    const isExpanded = card.getAttribute('data-expanded') === 'true';
+                    
+                    // Close all other cards
+                    cards.forEach(otherCard => {
+                        if (otherCard !== card && otherCard.getAttribute('data-expanded') === 'true') {
+                            otherCard.setAttribute('data-expanded', 'false');
+                            const otherToggleText = otherCard.querySelector('.toggle-text');
+                            otherToggleText.textContent = 'Read more';
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.setAttribute('data-expanded', !isExpanded);
+                    toggleText.textContent = isExpanded ? 'Read more' : 'Read less';
+                });
+                
+                // Make the whole card clickable
+                card.addEventListener('click', () => {
+                    toggle.click(); // Trigger the toggle button click
+                });
+                
+                // Prevent clicks on links and details from triggering card expansion
+                const preventPropagation = card.querySelectorAll('a, .member-details');
+                preventPropagation.forEach(element => {
+                    element.addEventListener('click', (e) => e.stopPropagation());
                 });
             });
 

@@ -90,31 +90,74 @@
         <section id="how-it-works">
             <h2>How It Works</h2>
             <div class="how-it-works-content">
-                <div class="how-it-works-text">
-                    <div class="system-component">
-                        <i class="fas fa-camera-retro"></i>
-                        <h3>Sensor Nodes</h3>
-                        <p>Deployed around the perimeter, these nodes detect motion using IR sensors and capture images with ESP32-CAM modules.</p>
+                <div class="flow-diagram-container horizontal-flow">
+                    <!-- Motion Detection -->
+                    <div class="flow-component">
+                        <div class="flow-icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <h4 class="flow-title">Motion Detection</h4>
+                        <p class="flow-description">PIR sensor detects movement</p>
+                        <div class="flow-connection">Triggers Camera</div>
                     </div>
-                    <div class="system-component">
-                        <i class="fas fa-microchip"></i>
-                        <h3>Central Gadget</h3>
-                        <p>The ESP32-S3 central gadget collects data from nodes, processes images to identify potential threats, and manages system settings.</p>
+
+                    <!-- First Arrow -->
+                    <div class="flow-double-arrow">
+                        <span>→</span>
+                        <p>Motion Detected</p>
                     </div>
-                    <div class="system-component">
-                        <i class="fas fa-network-wired"></i>
-                        <h3>Communication</h3>
-                        <p>Nodes communicate wirelessly with the central gadget, creating a mesh network for reliable coverage.</p>
+
+                    <!-- Image Processing -->
+                    <div class="flow-component">
+                        <div class="flow-icon-group">
+                            <div class="flow-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div class="flow-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                        </div>
+                        <h4 class="flow-title">Image Analysis</h4>
+                        <p class="flow-description">ESP32-CAM captures & processes image using Edge Impulse ML</p>
+                        <div class="flow-connection">Human Detection</div>
                     </div>
-                    <div class="system-component">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Mobile Integration</h3>
-                        <p>Our Flutter-based mobile app provides real-time alerts, system control, and image review capabilities.</p>
+
+                    <!-- Second Arrow -->
+                    <div class="flow-double-arrow">
+                        <span>→</span>
+                        <p>Person Detected</p>
                     </div>
-                </div>
-                <div class="how-it-works-image">
-                    <img src="images/nodeDiagram1.png" alt="SecureScape System Diagram 1" class="system-diagram">
-                    <img src="images/nodeDiagram2.png" alt="SecureScape System Diagram 2" class="system-diagram">
+
+                    <!-- Node Response -->
+                    <div class="flow-component">
+                        <div class="flow-icon-group">
+                            <div class="flow-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="flow-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                        </div>
+                        <h4 class="flow-title">Node Response</h4>
+                        <p class="flow-description">Triggers LED lights and alarm</p>
+                        <div class="flow-connection">Alert Transmission</div>
+                    </div>
+
+                    <!-- Third Arrow -->
+                    <div class="flow-double-arrow">
+                        <span>→</span>
+                        <p>Send Alert</p>
+                    </div>
+
+                    <!-- Mobile Notification -->
+                    <div class="flow-component">
+                        <div class="flow-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4 class="flow-title">User Alert</h4>
+                        <p class="flow-description">Mobile app receives notification with captured image</p>
+                        <div class="flow-connection">Real-time Monitoring</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -132,11 +175,6 @@
                     <i class="fas fa-home"></i>
                     <h3>Remote Property Monitoring</h3>
                     <p>Keep an eye on cabins, construction sites, or other remote assets.</p>
-                </div>
-                <div class="use-case-card">
-                    <i class="fas fa-binoculars"></i>
-                    <h3>Wildlife Observation</h3>
-                    <p>Non-invasively monitor wildlife activity for research or photography.</p>
                 </div>
                 <div class="use-case-card">
                     <i class="fas fa-plane"></i>
@@ -411,7 +449,7 @@
 
         <!-- CDR Presentation Section -->
         <section id="cdr-presentation">
-            <h2>Critical Design Review Presentation</h2>
+            <h2>SD2 - Critical Design Review Presentation</h2>
             <div class="video-container">
                 <iframe 
                     id="cdr-video"
@@ -423,7 +461,7 @@
                 </iframe>
             </div>
             <div class="demo-description">
-                <h3>Senior Design 2 CDR Overview</h3>
+                <h3>SD2 - CDR Overview</h3>
                 <ul class="demo-highlights">
                     <li><i class="fas fa-project-diagram"></i> Complete system architecture</li>
                     <li><i class="fas fa-microchip"></i> Hardware implementation details</li>
@@ -435,7 +473,7 @@
 
         <!-- Midterm Demo Section -->
         <section id="midterm-demo">
-            <h2>Senior Design 2 Midterm Demo</h2>
+            <h2>SD2 - Midterm Demo</h2>
             <div class="video-container">
                 <iframe 
                     id="midterm-video"
@@ -447,7 +485,7 @@
                 </iframe>
             </div>
             <div class="demo-description">
-                <h3>Senior Design 2 Midterm Progress</h3>
+                <h3>SD2 - Midterm Progress</h3>
                 <ul class="demo-highlights">
                     <li><i class="fas fa-mobile-alt"></i> Mobile application demonstration</li>
                     <li><i class="fas fa-microchip"></i> Hardware implementation progress</li>
